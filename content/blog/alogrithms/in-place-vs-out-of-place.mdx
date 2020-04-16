@@ -1,0 +1,61 @@
+---
+title: In-place vs Out-of-place algorithms in JavaScript
+date: "2020-04-16"
+description: "The differnce between In-place vs Out-of-place algorithms"
+---
+
+### What is in-place algorithm?
+
+> [Wikipedia](https://en.wikipedia.org/wiki/In-place_algorithm):  
+> In computer science, an **in-place algorithm** is an algorithm which transforms input using no auxiliary data structure.
+
+let's see it in an example:
+
+```js
+const sampleArray = [1, 2, 3]
+
+function multiplyArrayByTwo(array) {
+  array.forEach((number, index) => {
+    array[index] = number * 2
+  })
+  return array
+}
+
+const result = multiplyArrayByTwo(sampleArray)
+
+console.log(result) // 2,4,6
+console.log(sampleArray) // 2,4,6
+```
+
+We didn't use any additional data structures to modify the array.
+We also see that the **original array was mutated**.
+In fact, we don’t need to return the result, we can continue to use the modified sampleArray.
+If we will run the function one time, the result will be `[4,8,12]`.
+
+### What is out-of-place algorithm?
+
+Now let's see out-of-place example, we will use map method for that.
+
+```js
+const sampleArray = [1, 2, 3]
+
+function multiplayArrayByTwo(array) {
+  const modifiedArray = array.map(number => {
+    return number * 2
+  })
+  return modifiedArray
+}
+
+const result = multiplayArrayByTwo(sampleArray)
+
+console.log(result) // 2,4,6
+console.log(sampleArray) // 1,2,3
+```
+
+Now we using a map method to iterate and create a new array.
+We use more memory, but the **original array remains the same**. If we will run this function again result and sampleArray will remain the same.
+
+### Which is better?
+
+It depends. Usually, you want to stick with **out-of-place** functions, because it's easier to manage.
+But when you have limited memory, you should choose **in-place** function.
