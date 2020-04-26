@@ -4,7 +4,7 @@ module.exports = {
     title: `sherm's blog 👨‍💻`,
     author: `Pavel Shermayster`,
     description: `my personal blog. I'm writing about web development, productivity, and psychology`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://shermayster.com/`,
     social: {
       twitter: `ShermPavel`,
     },
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
