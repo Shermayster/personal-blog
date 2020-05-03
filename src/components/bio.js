@@ -34,10 +34,11 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>
-              {` `}
+              My name is <strong>{author}</strong>.{` `}
+              I'm Front-end developer from Israel and writing about Front-end
+              technologies and productivity.
               <a href={`https://twitter.com/${social.twitter}`}>
-                Follow me on Twitter
+                Say hi to me on Twitter
               </a>
             </p>
           </Container>
