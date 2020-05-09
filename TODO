@@ -1,0 +1,9 @@
+
+thunkReducer:
+  ☐ create an example with simple fetch and useReducer hook
+  ☐ what problem with this solution
+  ☐ suggest future refrences
+  ☐ refractor the hook to useThunkReducer
+
+  Currying:
+    ☐ Make a review

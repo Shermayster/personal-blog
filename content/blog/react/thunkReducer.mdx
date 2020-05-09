@@ -1,20 +1,25 @@
 ---
-title: React - thunk reducer
+title: Simplify components in React with useThunkReducer hook
 date: "2020-05-03"
-description: "How to implement react thunk hook"
+description: "Why to use useThunkReducer and how to build one"
 ---
 
-# Thunk
+The problem
+what's a problem with react.
+We calling an api inside a component. It pollutes our component with logic that not related to UI logic and makes it less reusable.
+One of the ways to solve it is to use XState. Machine state library. I strongly suggest to check it. Another solution is to use Thunk.
+Let's see in an example.
 
-thunk gives us an option to pass a function to reducer.
+First let's create a component that fetch and render data. We will use mock server with array of emoji as our data.
+
+# Thunk thunk gives us an option to pass a function to reducer.
 
 ```javascript
 import React from "react"
-import "./styles.css"
 
 const fetchMock = () =>
   new Promise(resolve => {
-    const data = ["⭐", "✅"]
+    const data = ["⭐", "✅"] // our data
     setTimeout(() => {
       resolve(data)
     }, 1000)
