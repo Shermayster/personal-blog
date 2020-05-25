@@ -1,5 +1,24 @@
 {
     "cSpell.enableFiletypes": [
         "mdx"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#1ba247",
+        "activityBar.activeBorder": "#d7c8f6",
+        "activityBar.background": "#1ba247",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#d7c8f6",
+        "activityBarBadge.foreground": "#15202b",
+        "statusBar.background": "#147634",
+        "statusBar.border": "#147634",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#1ba247",
+        "titleBar.activeBackground": "#147634",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.border": "#147634",
+        "titleBar.inactiveBackground": "#14763499",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#147634"
 }
