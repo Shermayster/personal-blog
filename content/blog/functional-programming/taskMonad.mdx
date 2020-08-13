@@ -1,0 +1,68 @@
+---
+title: Task Monad
+date: "2020-08-13"
+description: "handle async operation other way"
+---
+
+## Not ready
+
+I'm still writing this article
+
+Task Monad is similar to Promise, except it's [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation).
+Let's take a generic fetch function:
+
+```javascript
+
+    const validateResponse = resp => {
+        const status = resp;
+        if (status >= 200 && status < 300) {
+            return Promise.resolve(response);
+        } else {
+            return Promise.reject(new Error(response.statusText);
+        }
+    }
+
+    export const fetchData = (url) =>
+        fetch(url)
+        .then(status)
+        .then(json)
+        .catch(console.err)
+```
+
+we will use it like this
+
+```javascript
+import { fetchData } from "http"
+
+fetchData("some/url").then(setData)
+```
+
+No matter if we using `then(setData)`, fetchData will execute
+
+let's rewrite it with Task:
+
+```javascript
+    import {Task} from 'utils';
+
+    const validateResponse = resp => {
+        const status = resp;
+        if (status >= 200 && status < 300) {
+            return Promise.resolve(response);
+        } else {
+            return Promise.reject(new Error(response.statusText);
+        }
+    }
+
+    export const fetchData = (url) =>
+       new Task((rej, res) => fetch(url)
+        .then(status)
+        .then(json)
+        .then(res)
+        .catch(rej))
+```
+
+And consumption will be:
+
+```javascript
+fetchData("some/url").fork(console.error, setData)
+```
