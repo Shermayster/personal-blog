@@ -35,8 +35,8 @@ function Bio() {
             />
             <p>
               My name is <strong>{author}</strong>.{` `}
-              I'm Front-end developer from Israel and writing about Front-end
-              technologies and productivity.
+              I'm working as Head of Software in <a href={`https://www.mobileodt.com/`}>MobileODT</a> and writing about Web
+              technologies, productivity, and management.
               <a href={`https://twitter.com/${social.twitter}`}>
                 Say hi to me on Twitter
               </a>
