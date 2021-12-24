@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Hind+Madurai&family=Montserrat:wght@400;700&display=swap");
+
+body {
+  font-family: "Hind Madurai", sans-serif;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+}
+.sub-title {
+  font-family: "Expletus Sans", cursive;
+  font-weight: 700;
+}

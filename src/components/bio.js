@@ -7,41 +7,25 @@
 
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import styled from "styled-components"
-
-import { rhythm } from "../utils/typography"
 
 function Bio() {
   return (
     <StaticQuery
       query={bioQuery}
-      render={data => {
+      render={(data) => {
         const { author, social } = data.site.siteMetadata
         return (
-          <Container>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
+          <div className="flex gap-2 my-8 items-center">
+            <p className="text-xs">
               My name is <strong>{author}</strong>.{` `}
-              I'm working as Head of Software in <a href={`https://www.mobileodt.com/`}>MobileODT</a> and writing about Web
-              technologies, productivity, and management.
+              I'm a Frontend developer at{" "}
+              <a href={`https://www.openweb.com/`}>OpenWeb</a> and writing about
+              Web technologies.{" "}
               <a href={`https://twitter.com/${social.twitter}`}>
                 Say hi to me on Twitter
               </a>
             </p>
-          </Container>
+          </div>
         )
       }}
     />
@@ -66,10 +50,6 @@ const bioQuery = graphql`
       }
     }
   }
-`
-
-const Container = styled.div`
-  display: flex;
 `
 
 export default Bio

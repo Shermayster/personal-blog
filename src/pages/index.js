@@ -5,46 +5,37 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-class Blog extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
+const Blog = (props) => {
+  const { data, location } = props
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMdx.edges
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <div style={{ margin: "20px 0 40px" }}>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`blog${node.fields.slug}`}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </div>
-            )
-          })}
-        </div>
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
+      <div className="flex flex-col  md:grid md:grid-rows-4 md:grid-flow-col gap-4 p-2">
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <Link
+              to={`blog${node.fields.slug}`}
+              className="p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
+              key={node.fields.slug}
+            >
+              <h3 className="text-lg ">{title}</h3>
+              <small>{node.frontmatter.date}</small>
+              <p
+                className="text-xs"
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+            </Link>
+          )
+        })}
+      </div>
+    </Layout>
+  )
 }
 
 export default Blog
