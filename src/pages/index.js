@@ -13,13 +13,16 @@ const Blog = (props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="flex flex-col  md:grid md:grid-rows-4 md:grid-flow-col gap-4 p-2">
+      <div className="grid grid-cols-3 gap-4 p-2">
+        <div className="col-start-2 text-lg">
+          <Bio />
+        </div>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <Link
               to={`blog${node.fields.slug}`}
-              className="p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
+              className="col-start-2 p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
               key={node.fields.slug}
             >
               <h3 className="text-lg ">{title}</h3>
