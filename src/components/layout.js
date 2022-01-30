@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import Bio from "./bio"
+import { VscGithubInverted } from "@react-icons/all-files/vsc/VscGithubInverted"
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 
 class Layout extends React.Component {
   render() {
@@ -9,6 +12,19 @@ class Layout extends React.Component {
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
+    const social = (
+      <>
+        <a target="_blank" href="https://github.com/Shermayster">
+          <VscGithubInverted title="pavel shermayster's github" />
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/shermpavel/">
+          <FaLinkedin title="linkedin" />
+        </a>
+        <a target="_blank" href="https://twitter.com/ShermPavel">
+          <FaTwitter />
+        </a>
+      </>
+    )
     if (location.pathname === rootPath || location.pathname === blogPath) {
       header = (
         <>
@@ -17,10 +33,8 @@ class Layout extends React.Component {
               {title}
             </Link>
           </h1>
-          <div>
-            <a target="_blank" href="https://github.com/Shermayster">
-              github
-            </a>
+          <div className="flex gap-4 text-lg shadow-none text-indigo-800">
+            {social}
           </div>
         </>
       )
@@ -32,24 +46,22 @@ class Layout extends React.Component {
               {title}
             </Link>
           </h3>
-          <div>
+          <div className="flex gap-4 text-lg shadow-none text-indigo-800">
             <Link to={`/`} className="shadow-none">
-              Articles
+              All Articles
             </Link>
-            <a target="_blank" href="https://github.com/Shermayster">
-              github
-            </a>
+            {social}
           </div>
         </>
       )
     }
     return (
       <div className="min-h-screen flex flex-col justify-between">
-        <header className="flex bg-gray-50 shadow text-lg p-4 align-middle justify-between">
+        <header className="flex flex-col items-center md:items-start md:flex-row bg-gray-50 shadow text-lg p-4 md:align-middle justify-between">
           {header}
         </header>
-        <main className="mx-2 md:mx-32 my-4 ">{children}</main>
-        <footer className=" bg-indigo-800 text-emerald-100 px-4 flex justify-center">
+        <main className="mx-2 my-4 flex-grow flex">{children}</main>
+        <footer className="bg-indigo-800 text-emerald-100 px-4 flex justify-center">
           <Bio />
         </footer>
       </div>

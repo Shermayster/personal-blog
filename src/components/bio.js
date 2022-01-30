@@ -19,10 +19,12 @@ function Bio() {
             <p>
               My name is {author}.{` `}
               I'm building high performant React micro-fronted apps at{" "}
-              <a href={`https://www.openweb.com/`}>OpenWeb</a>.{" "}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Say hi to me on Twitter
-              </a>
+              <a href={`https://www.openweb.com/`}>OpenWeb</a>.
+              <div>
+                <a href={`https://twitter.com/${social.twitter}`}>
+                  Say hi to me on Twitter
+                </a>
+              </div>
             </p>
           </div>
         )

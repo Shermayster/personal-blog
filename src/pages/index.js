@@ -3,7 +3,6 @@ import React from "react"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 const Blog = (props) => {
   const { data, location } = props
@@ -13,7 +12,7 @@ const Blog = (props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="grid grid-cols-3 gap-4 p-2">
+      <div className="lg:grid lg:grid-cols-3 md:gap-2 lg:gap-4 p-2">
         <div className="col-start-2 text-lg">
           <Bio />
         </div>
@@ -22,13 +21,12 @@ const Blog = (props) => {
           return (
             <Link
               to={`blog${node.fields.slug}`}
-              className="col-start-2 p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
+              className="lg:col-start-2 p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
               key={node.fields.slug}
             >
-              <h3 className="text-lg ">{title}</h3>
+              <h3 className="text-xl">{title}</h3>
               <small>{node.frontmatter.date}</small>
               <p
-                className="text-xs"
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

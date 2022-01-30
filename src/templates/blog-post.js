@@ -14,31 +14,34 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <div className="mx-2 md:mx-64">
-          <SEO
-            title={post.frontmatter.title}
-            description={post.frontmatter.description || post.excerpt}
-          />
-          <h1 className="text-2xl title">{post.frontmatter.title}</h1>
-          <p className="text-xs sub-title">{post.frontmatter.date}</p>
-          <div className="my-8 flex flex-col gap-2">
-            <MDXRenderer
-              components={{
-                pre: ({ className, ...p }) => (
-                  <pre {...p} className={className + " my-2"} />
-                ),
-              }}
-            >
-              {post.body}
-            </MDXRenderer>
+        <div className="flex flex-col flex-grow">
+          <div className="lg:grid lg:grid-cols-3 flex-1">
+            <article className="lg:col-start-2">
+              <SEO
+                title={post.frontmatter.title}
+                description={post.frontmatter.description || post.excerpt}
+              />
+              <h1 className="text-4xl title">{post.frontmatter.title}</h1>
+              <p className="text-xs sub-title">{post.frontmatter.date}</p>
+              <div className="my-8 flex flex-col gap-2">
+                <MDXRenderer
+                  components={{
+                    pre: ({ className, ...p }) => (
+                      <pre {...p} className={className + " my-2"} />
+                    ),
+                  }}
+                >
+                  {post.body}
+                </MDXRenderer>
+              </div>
+              <hr
+                style={{
+                  marginBottom: rhythm(1),
+                }}
+              />
+            </article>
           </div>
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-
-          <ul className="flex justify-between items-center">
+          <ul className="flex flex-col md:flex-row justify-between items-center mx-4">
             <li>
               {previous && (
                 <Link
