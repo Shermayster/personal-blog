@@ -29,11 +29,11 @@ class Layout extends React.Component {
       header = (
         <>
           <h1>
-            <Link className="shadow-none" to={`/`}>
+            <Link className="shadow-none text-gray-50" to={`/`}>
               {title}
             </Link>
           </h1>
-          <div className="flex gap-4 text-lg shadow-none text-indigo-800">
+          <div className="flex gap-4 text-lg shadow-none text-gray-50">
             {social}
           </div>
         </>
@@ -42,11 +42,11 @@ class Layout extends React.Component {
       header = (
         <>
           <h3>
-            <Link className="shadow-none" to={`/`}>
+            <Link className="shadow-none text-gray-50" to={`/`}>
               {title}
             </Link>
           </h3>
-          <div className="flex gap-4 text-lg shadow-none text-indigo-800">
+          <div className="flex gap-4 text-lg shadow-none text-gray-50">
             <Link to={`/`} className="shadow-none">
               All Articles
             </Link>
@@ -57,11 +57,11 @@ class Layout extends React.Component {
     }
     return (
       <div className="min-h-screen flex flex-col justify-between">
-        <header className="flex flex-col items-center md:items-start md:flex-row bg-gray-50 shadow text-lg p-4 md:align-middle justify-between">
+        <header className="flex flex-col items-center md:items-start md:flex-row bg-gray-900 text-gray-50 shadow text-lg p-4 px-10 md:align-middle justify-between">
           {header}
         </header>
         <main className="mx-2 my-4 flex-grow flex">{children}</main>
-        <footer className="bg-indigo-800 text-emerald-100 px-4 flex justify-center">
+        <footer className="bg-gray-800 text-gray-100 px-4 flex justify-center">
           <Bio />
         </footer>
       </div>

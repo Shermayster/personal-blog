@@ -12,7 +12,7 @@ const Blog = (props) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="lg:grid lg:grid-cols-3 md:gap-2 lg:gap-4 p-2">
+      <div className="lg:grid lg:grid-cols-3 md:gap-2 lg:gap-4 p-2 flex flex-col gap-2">
         <div className="col-start-2 text-lg">
           <Bio />
         </div>
@@ -21,11 +21,15 @@ const Blog = (props) => {
           return (
             <Link
               to={`blog${node.fields.slug}`}
-              className="lg:col-start-2 p-4 bg-white text-indigo-900 hover:bg-indigo-800 hover:text-emerald-50 hover:shadow shadow-none flex flex-col justify-center"
+              className="lg:col-start-2 p-4 bg-white text-gray-800 rounded-md shadow-md hover:bg-gray-800 hover:text-gray-50 hover:-translate-y-1 transition duration-300 flex flex-col justify-center gap-1"
               key={node.fields.slug}
             >
               <h3 className="text-xl">{title}</h3>
-              <small>{node.frontmatter.date}</small>
+              <small>
+                <span className="border rounded-full px-2">
+                  {node.frontmatter.date}
+                </span>
+              </small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
