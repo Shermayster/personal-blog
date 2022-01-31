@@ -5,6 +5,8 @@ import { VscGithubInverted } from "@react-icons/all-files/vsc/VscGithubInverted"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 
+const nameStyles =
+  "shadow-none text-gray-50 text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200"
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -40,11 +42,11 @@ class Layout extends React.Component {
     if (location.pathname === rootPath || location.pathname === blogPath) {
       header = (
         <>
-          <h1>
-            <Link className="shadow-none text-gray-50" to={`/`}>
+          <div>
+            <Link className={nameStyles} to={`/`}>
               {title}
             </Link>
-          </h1>
+          </div>
           <div className="flex gap-4 text-lg shadow-none text-gray-50">
             {social}
           </div>
@@ -53,11 +55,11 @@ class Layout extends React.Component {
     } else {
       header = (
         <>
-          <h3>
-            <Link className="shadow-none text-gray-50" to={`/`}>
+          <div>
+            <Link className={nameStyles} to={`/`}>
               {title}
             </Link>
-          </h3>
+          </div>
           <div className="flex gap-4 text-lg shadow-none text-gray-50">
             <Link to={`/`} className="shadow-none">
               All Articles
