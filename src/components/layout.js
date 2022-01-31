@@ -14,13 +14,25 @@ class Layout extends React.Component {
 
     const social = (
       <>
-        <a target="_blank" href="https://github.com/Shermayster">
+        <a
+          target="_blank"
+          className="shadow-none flex items-center"
+          href="https://github.com/Shermayster"
+        >
           <VscGithubInverted title="pavel shermayster's github" />
         </a>
-        <a target="_blank" href="https://www.linkedin.com/in/shermpavel/">
+        <a
+          target="_blank"
+          className="shadow-none flex items-center"
+          href="https://www.linkedin.com/in/shermpavel/"
+        >
           <FaLinkedin title="linkedin" />
         </a>
-        <a target="_blank" href="https://twitter.com/ShermPavel">
+        <a
+          target="_blank"
+          className="shadow-none flex items-center"
+          href="https://twitter.com/ShermPavel"
+        >
           <FaTwitter />
         </a>
       </>
