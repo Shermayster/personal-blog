@@ -21,7 +21,8 @@ const Blog = (props) => {
           return (
             <Link
               to={`blog${node.fields.slug}`}
-              className="lg:col-start-2 p-4 bg-white text-gray-800 rounded-md shadow-md hover:bg-gray-800 hover:text-gray-50 hover:-translate-y-1 transition duration-300 flex flex-col justify-center gap-1"
+              className="lg:col-start-2 p-4 bg-white text-gray-800 rounded-md shadow-md 
+              hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 hover:text-gray-50 hover:-translate-y-1 transition duration-300 flex flex-col justify-center gap-1"
               key={node.fields.slug}
             >
               <h3 className="text-xl">{title}</h3>
