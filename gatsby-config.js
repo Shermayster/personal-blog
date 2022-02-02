@@ -12,11 +12,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
+    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -55,13 +57,13 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
-        remarkPlugins: [
-          [
-            require("gatsby-remark-vscode").remarkPlugin,
-            {
-              theme: `Monokai`,
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
             },
-          ],
+          },
         ],
       },
     },

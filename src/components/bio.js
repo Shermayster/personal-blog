@@ -7,15 +7,22 @@
 
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-function Bio() {
+function Bio({ data }) {
   return (
     <StaticQuery
       query={bioQuery}
       render={(data) => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div className="flex gap-2 my-8 items-center">
+          <div className="flex gap-3 my-8 items-center">
+            <div>
+              <Img
+                className="rounded-full"
+                fixed={data.file.childImageSharp.fixed}
+              />
+            </div>
             <p>
               My name is {author}.{` `}
               I'm building high performant React micro-fronted apps at{" "}
@@ -35,6 +42,13 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
+    file(sourceInstanceName: { eq: "assets" }, name: { eq: "profile" }) {
+      childImageSharp {
+        fixed(width: 75, height: 75) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         author
