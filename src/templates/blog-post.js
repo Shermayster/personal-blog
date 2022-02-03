@@ -30,7 +30,10 @@ const BlogPostTemplate = (props) => {
           theme={dracula}
         >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre className={`${className} p-5 rounded shadow`} style={style}>
+            <pre
+              className={`${className} p-5 rounded shadow overflow-x-auto`}
+              style={style}
+            >
               {tokens.map((line, i) => (
                 <div {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
