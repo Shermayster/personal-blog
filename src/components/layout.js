@@ -74,7 +74,7 @@ class Layout extends React.Component {
         <header className="flex flex-col items-center md:items-start md:flex-row bg-gray-900 text-gray-50 shadow text-lg p-4 px-10 md:align-middle justify-between">
           {header}
         </header>
-        <main className="mx-2 my-4 flex-grow flex">{children}</main>
+        <main className="mx-2 my-4 flex-grow flex text-xl">{children}</main>
         <footer className="bg-gray-800 text-gray-100 px-4 flex justify-center">
           <Bio />
         </footer>

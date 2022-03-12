@@ -1,0 +1,21 @@
+---
+title: Simple rule that will reduce your code complexity
+date: "2022-03-12"
+description: A simple way to manage your code complexity
+---
+
+## Managing Complexity
+
+One of the hardest responsibilities as a developer is managing complexity. You start a new project with fresh codebase, but after a few months things getting more complex. Your code becomes harder to read, you have unnecessary abstractions and bugs take longer to fix. Sounds familiar?
+To solve this problem, I have a few simple rules that help me manage complexity of a codebase.
+One of them is:
+
+## **NO NESTED 'IF' STATEMENT**
+
+Why it's important?
+
+We read code more than writing it. We need to optimize our future experience. It should take no longer than 3 seconds to understand what function does. Nested 'if' statement usually means that function is doing more than one thing and will require much more time for understanding.
+What should I do instead?
+
+Stick to the rule: **'should do only one thing.'** From a name of a function, it should be clear what it should do. Try to explain everything that a function does with name of the function. If you need to add ‘and’ word, it means you violating the rule. In most case wrapping nested if statement with a function can solve the problem. It’s ok to use function to call several other functions.
+It may seem like unnecessary overhead and maybe it is in some cases, but think about future self or other developer. You need to implement a feature or solve a bug; how frustrating is to waste time on understanding unrelated code? You want to move fast, so optimize your code for scanning.
