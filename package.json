@@ -41,7 +41,7 @@
     "react-switch": "^6.0.0",
     "react-typography": "^0.16.20",
     "remark-code-blocks": "^2.0.1",
-    "sharp": "^0.30.0",
+    "sharp": "^0.30.5",
     "styled-components": "^5.3.3",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
