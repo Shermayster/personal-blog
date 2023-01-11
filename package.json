@@ -31,7 +31,7 @@
     "gatsby-remark-smartypants": "^5.4.0",
     "gatsby-remark-vscode": "^3.3.1",
     "gatsby-source-filesystem": "^4.6.0",
-    "gatsby-transformer-remark": "^5.6.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.6.0",
     "netlify-cms-app": "^2.15.62",
     "prism-react-renderer": "^1.2.1",
